@@ -273,6 +273,10 @@ class Reset():
         textRect.center = (WIDTH * 0.53, HEIGHT * 0.8)
         screen.blit(text, textRect)
         for event in pygame.event.get():
+            # quitting event
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_KP_ENTER or event.key == pygame.K_RETURN:
                     self.reset()
